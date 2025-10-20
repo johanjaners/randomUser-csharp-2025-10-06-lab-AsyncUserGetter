@@ -1,11 +1,16 @@
 ﻿using GROAN.Business;
 
-Console.WriteLine("here are the arguments");
-foreach (var arg in args)
-{
-  Console.WriteLine($"{arg}");
-}
+Console.WriteLine("GROAN console app that loads 50 people from API randomuser.me/api");
 
+Console.WriteLine("===");
+if (args.Length > 0)
+{
+  Console.WriteLine("here are the arguments: ");
+  foreach (var arg in args)
+  {
+    Console.WriteLine($"{arg}");
+  }
+}
 var client = new RandomUserClient();
 var people = await client.GetResultsFromApi();
 
@@ -23,6 +28,7 @@ var peopleGroupedByCountry = people
   .GroupBy(person => person.Location.Country);
 
 Console.WriteLine("No of countries: " + peopleGroupedByCountry.Count());
+Console.WriteLine();
 
 // foreach(var countryGroup in peopleGroupedByCountry)
 // {
@@ -34,21 +40,21 @@ Console.WriteLine("No of countries: " + peopleGroupedByCountry.Count());
 //   Console.WriteLine();
 // }
 
-
 string? lastNameForFilter = "";
-
 if (args.Length > 0)
+{
   lastNameForFilter = args[0];
 
-var filteredPeople = people
-  .Where(p => p.Name.Last.Contains(lastNameForFilter))
-  .ToList();
+  var filteredPeople = people
+    .Where(p => p.Name.Last.Contains(lastNameForFilter))
+    .ToList();
 
-Console.WriteLine("Found people by filter on last name: " + filteredPeople.Count);
-foreach (var person in filteredPeople)
-{
-  Console.WriteLine($"{person.Name.First} {person.Name.Last}");
-  Console.WriteLine("City: " + person.Location.City);
-  Console.WriteLine("Country: " + person.Location.Country);
-  Console.WriteLine();
+  Console.WriteLine($"Found people by filter '{lastNameForFilter}' on last name: " + filteredPeople.Count);
+  foreach (var person in filteredPeople)
+  {
+    Console.WriteLine($"{person.Name.First} {person.Name.Last}");
+    Console.WriteLine("City: " + person.Location.City);
+    Console.WriteLine("Country: " + person.Location.Country);
+    Console.WriteLine("===");
+  }
 }
