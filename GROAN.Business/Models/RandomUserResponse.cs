@@ -19,3 +19,10 @@ public class Result
     public string Phone { get; set; } = string.Empty;
 }
 
+public class Name
+{
+    [JsonPropertyName("first")]
+    public string First { get; set; } = string.Empty;
+    [JsonPropertyName("last")]
+    public string Last { get; set; } = string.Empty;
+}
