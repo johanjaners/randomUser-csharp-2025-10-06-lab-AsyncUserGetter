@@ -49,7 +49,8 @@ if (args.Length > 0)
     .Where(p => p.Name.Last.Contains(lastNameForFilter))
     .ToList();
 
-  Console.WriteLine($"Found people by filter '{lastNameForFilter}' on last name: " + filteredPeople.Count);
+  Console.WriteLine($"Filtering by: {lastNameForFilter}, Total found: {filteredPeople.Count}");
+  Console.WriteLine("===");
   foreach (var person in filteredPeople)
   {
     Console.WriteLine($"{person.Name.First} {person.Name.Last}");
