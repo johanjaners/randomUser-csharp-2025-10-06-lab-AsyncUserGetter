@@ -50,4 +50,5 @@ foreach (var person in filteredPeople)
   Console.WriteLine($"{person.Name.First} {person.Name.Last}");
   Console.WriteLine("City: " + person.Location.City);
   Console.WriteLine("Country: " + person.Location.Country);
+  Console.WriteLine();
 }
