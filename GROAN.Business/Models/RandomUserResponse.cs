@@ -6,5 +6,16 @@ namespace GROAN.Business;
 public class RandomUserResponse
 {
     [JsonPropertyName("results")]
-    public List<Results> Results { get; set; } = new();
+    public List<Result> Results { get; set; } = new();
 }
+
+public class Result
+{
+    [JsonPropertyName("name")]
+    public Name Name { get; set; } = new();
+    [JsonPropertyName("location")]
+    public Location Location { get; set; } = new();
+    [JsonPropertyName("phone")]
+    public string Phone { get; set; } = string.Empty;
+}
+
