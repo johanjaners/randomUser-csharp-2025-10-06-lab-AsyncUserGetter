@@ -11,3 +11,5 @@ var results = await client.GetResultsFromApi();
 
 foreach (var r in results)
   Console.WriteLine($"{r.Name.First}");
+
+Console.WriteLine("No of persons: " + results.Count);
