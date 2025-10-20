@@ -6,8 +6,9 @@ using Xunit;
 
 public class RandomUserClientTests
 {
+
     [Fact]
-    public async Task GetResultsFromApi_ShouldReturnSomeUsers()
+    public async Task GetResultsFromApi_ShouldReturn50Users()
     {
         // Arrange
         var client = new RandomUserClient();
@@ -17,6 +18,6 @@ public class RandomUserClientTests
 
         // Assert
         Assert.NotNull(results);
-        Assert.True(results.Count > 0, "Expected at least one user from the API");
+        Assert.True(results.Count == 50, "Expected 50 users from the API");
     }
 }
