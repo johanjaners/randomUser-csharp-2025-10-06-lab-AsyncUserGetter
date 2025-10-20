@@ -3,19 +3,6 @@ using System.Text.Json.Serialization;
 
 namespace GROAN.Business;
 
-public class RandomUserResponse
-{
-    [JsonPropertyName("results")]
-    public List<Result> Results { get; set; } = new();
-}
-
-public class Name
-{
-    [JsonPropertyName("first")]
-    public string First { get; set; } = string.Empty;
-    [JsonPropertyName("last")]
-    public string Last { get; set; } = string.Empty;
-}
 public class Location
 {
     [JsonPropertyName("city")]
