@@ -26,3 +26,10 @@ public class Name
     [JsonPropertyName("last")]
     public string Last { get; set; } = string.Empty;
 }
+public class Location
+{
+    [JsonPropertyName("city")]
+    public string City { get; set; } = string.Empty;
+    [JsonPropertyName("country")]
+    public string Country { get; set; } = string.Empty;
+}
