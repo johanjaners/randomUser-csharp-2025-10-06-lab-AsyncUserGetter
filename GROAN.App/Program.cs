@@ -10,6 +10,9 @@ var client = new RandomUserClient();
 var results = await client.GetResultsFromApi();
 
 foreach (var r in results)
-  Console.WriteLine($"{r.Name.First}");
+{
+  Console.WriteLine("First name: " + r.Name.First);
+  Console.WriteLine("City: " + r.Location.City);
+}
 
 Console.WriteLine("No of persons: " + results.Count);

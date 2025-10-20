@@ -18,6 +18,6 @@ public class RandomUserClientTests
 
         // Assert
         Assert.NotNull(results);
-        Assert.True(results.Count == 50, "Expected 50 users from the API");
+        Assert.True(results.Count == 50);
     }
 }
